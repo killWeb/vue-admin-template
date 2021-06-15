@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
+import FilesRouter from './modules/files'
 
 Vue.use(Router)
 
@@ -161,7 +162,8 @@ export const constantRoutes = [
     },
 
     // 404 page must be placed at the end !!!
-    { path: '*', redirect: '/404', hidden: true }
+    { path: '*', redirect: '/404', hidden: true },
+    ...FilesRouter
 ]
 
 const createRouter = () => new Router({

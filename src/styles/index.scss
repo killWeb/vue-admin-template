@@ -48,6 +48,14 @@ div:focus {
   outline: none;
 }
 
+.fl{
+  float: left;
+}
+
+.fr{
+  float: right;
+}
+
 .clearfix {
   &:after {
     visibility: hidden;

@@ -1,5 +1,5 @@
-import axios from 'axios'
-import { Message } from 'element-ui'
+import axios from "axios";
+import { Message } from "element-ui";
 // import store from '@/store'
 // import { getToken } from '@/utils/auth'
 
@@ -8,7 +8,7 @@ const service = axios.create({
     baseURL: process.env.VUE_APP_BASE_API, // url = base url + request url
     // withCredentials: true, // send cookies when cross-domain requests
     timeout: 5000 // request timeout
-})
+});
 
 // request interceptor
 service.interceptors.request.use(
@@ -21,14 +21,14 @@ service.interceptors.request.use(
         //     // please modify it according to the actual situation
         //     config.headers['X-Token'] = getToken()
         // }
-        return config
+        return config;
     },
     error => {
     // do something with request error
-        console.log(error) // for debug
-        return Promise.reject(error)
+        console.log(error); // for debug
+        return Promise.reject(error);
     }
-)
+);
 
 // response interceptor
 service.interceptors.response.use(
@@ -43,7 +43,7 @@ service.interceptors.response.use(
    * You can also judge the status by HTTP Status Code
    */
     response => {
-        const res = response.data
+        const res = response.data;
 
         // if the custom code is not 20000, it is judged as an error.
         // if (res.code !== 20000) {
@@ -70,17 +70,17 @@ service.interceptors.response.use(
         // } else {
         //     return res
         // }
-        return res
+        return res;
     },
     error => {
-        console.log('err' + error) // for debug
+        console.log("err" + error); // for debug
         Message({
             message: error.message,
-            type: 'error',
+            type: "error",
             duration: 5 * 1000
-        })
-        return Promise.reject(error)
+        });
+        return Promise.reject(error);
     }
-)
+);
 
-export default service
+export default service;

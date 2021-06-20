@@ -1,4 +1,4 @@
-import request from '@/utils/request'
+import request from "@/utils/request";
 
 /**
  * @description 获取文件列表
@@ -7,10 +7,10 @@ import request from '@/utils/request'
  */
 export function getList(data) {
     return request({
-        url: '/api/files/list',
-        method: 'post',
+        url: "/api/files/list",
+        method: "post",
         data
-    })
+    });
 }
 /**
  * @description 上传文件
@@ -19,8 +19,20 @@ export function getList(data) {
  */
 export function addFile(data) {
     return request({
-        url: '/api/files/add',
-        method: 'post',
+        url: "/api/files/add",
+        method: "post",
         data
-    })
+    });
+}
+/**
+ * @description 删除文件
+ * @param {*} data
+ * @returns
+ */
+export function delFile(data) {
+    return request({
+        url: "/api/files/delete",
+        method: "post",
+        data
+    });
 }
